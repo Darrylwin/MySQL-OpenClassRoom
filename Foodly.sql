@@ -86,3 +86,12 @@ VALUES(
 SELECT * FROM utilisateur;  -- Affiche tous les users
 
 SELECT `nom`, `prenom`, `email` FROM utilisateur;  -- lister tous les noms et les calories associées pour chaque aliment 
+
+// Mise à jour de Données
+
+UPDATE `utilisateur` SET `email` = 'quentind@gmail.com' WHERE `id` = '1'; -- changer l’e-mail du premier utilisateur 
+
+UPDATE aliment SET `nom` =  "Concombre" where `nom` = "poire"; -- Remplacer le nom Poire du champ nom d ealiment par 'Concombre'
+-- UPDATE nom_table SET colonne = valeure
+UPDATE utilisateur SET `email` = "logossou05@gmail.com" where id = 2;
+

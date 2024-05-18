@@ -214,3 +214,11 @@ SELECT nom, marque, id
 FROM aliment 
 WHERE (calories < 90)  AND (sucre >0.5)
 ORDER BY calories DESC;
+
+select *
+FROM aliment 
+WHERE bio = false
+ORDER BY proteines DESC,sucre DESC;
+
+
+

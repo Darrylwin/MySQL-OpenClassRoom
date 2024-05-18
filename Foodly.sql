@@ -87,6 +87,7 @@ SELECT * FROM utilisateur;  -- Affiche tous les users
 
 SELECT `nom`, `prenom`, `email` FROM utilisateur;  -- lister tous les noms et les calories associées pour chaque aliment 
 
+
 // Mise à jour de Données
 
 UPDATE `utilisateur` SET `email` = 'quentind@gmail.com' WHERE `id` = '1'; -- changer l’e-mail du premier utilisateur 
@@ -96,3 +97,10 @@ UPDATE aliment SET `nom` =  "Concombre" where `nom` = "poire"; -- Remplacer le n
 UPDATE utilisateur SET `email` = "logossou05@gmail.com" where id = 2;
 
 UPDATE `aliment` SET nom = "Pomme Golden", marque = "Intermarché" WHERE id = 2;
+
+
+// Suppression de données dans une `table`
+
+DELETE FROM `utilisateur` WHERE `id` = 4;
+DELETE FROM `utilisateur` WHERE `id` = 2; -- supprimer les users dont le id = 2 et id = 4
+

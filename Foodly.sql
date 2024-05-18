@@ -28,4 +28,15 @@ SHOW COLUMNS FROM utilisateur; -- Afficher le Schéma de la table
 
 -- Insertion de données
 INSERT INTO `utilisateur` (`nom`, `prenom`, `email`) 
-VALUES ('Durantay', 'Quentin', 'quentin@gmail.com');
+VALUES (
+    'Durantay', 
+    'Quentin', 
+    'quentin@gmail.com'
+);
+
+INSERT INTO utilisateur(nom,prenom,email)
+VALUES(
+    "LOGOSSOU",
+    "Darryl-win",
+    "logossoudarryl1@yahoo.com"
+);

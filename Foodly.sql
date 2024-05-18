@@ -167,3 +167,11 @@ UPDATE `utilisateur`
 SET prenom = "Maxime"
 WHERE id = 9;
 
+
+// Suppression de `tables`:
+
+DROP TABLE utilisateur;
+
+// Suppression de BD:
+
+DROP DATABASE foodly;

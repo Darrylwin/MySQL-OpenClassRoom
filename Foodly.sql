@@ -95,3 +95,4 @@ UPDATE aliment SET `nom` =  "Concombre" where `nom` = "poire"; -- Remplacer le n
 -- UPDATE nom_table SET colonne = valeure
 UPDATE utilisateur SET `email` = "logossou05@gmail.com" where id = 2;
 
+UPDATE `aliment` SET nom = "Pomme Golden", marque = "Intermarché" WHERE id = 2;

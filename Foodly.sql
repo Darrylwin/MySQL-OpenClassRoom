@@ -40,3 +40,16 @@ VALUES(
     "Darryl-win",
     "logossoudarryl1@yahoo.com"
 );
+
+INSERT INTO utilisateur(nom,prenom,email)
+VALUES(
+    "LABOU",
+    "Marc",
+    "labou_marc@gmail.com"
+),
+
+(
+    "AMEBLE",
+    "Ike",
+    "Ike_amb@gmail.com"
+);

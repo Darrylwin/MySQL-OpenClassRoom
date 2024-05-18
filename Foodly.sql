@@ -26,7 +26,7 @@ SHOW TABLES ;-- Afficher les tables présentes
 SHOW COLUMNS FROM aliment;
 SHOW COLUMNS FROM utilisateur; -- Afficher le Schéma de la table
 
--- Insertion de données
+-- Insertion de données dans la table utilisateurs
 INSERT INTO `utilisateur` (`nom`, `prenom`, `email`) 
 VALUES (
     'Durantay', 
@@ -60,3 +60,12 @@ VALUES
 ('Smith', 'Jane', 'jane@hotmail.com'),
 ('Dupont', 'Sebastien', 'sebastien@orange.fr'),
 ('Martin', 'Emilie', 'emilie@gmail.com');
+
+// Insertion de donnnées dans la `table` aliment:
+
+INSERT INTO `aliment` (`nom`, `marque`, `sucre`, `calories`, `graisses`, `proteines`, `bio`)
+VALUES
+('poire', 'monoprix', 27.5, 134, 0.2, 1.1, FALSE),
+('pomme', 'monoprix', 19.1, 72, 0.2, 0.4, FALSE),
+('oeuf', 'carrefour', 0.6, 82, 5.8, 6.9, TRUE),
+('lait d\'amande', 'bjorg', 4.5, 59, 3.9, 1.1, TRUE);

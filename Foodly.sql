@@ -145,3 +145,25 @@ VALUES(
     'Géoffroy',
     'bouboumegeo@gmail.com'
 );
+
+DELETE FROM `utilisateur`
+WHERE id = 8 or id = 9;
+
+INSERT INTO utilisateur
+VALUES(
+    8,
+    "SANNI",
+    "Cécile",
+    "yawavisanni@gmail.com"
+),
+(
+    9,
+    "ALEDJI",
+    "MAXIme",
+    'banakiweMaxime@gmail.com'
+);
+
+UPDATE `utilisateur`
+SET prenom = "Maxime"
+WHERE id = 9;
+

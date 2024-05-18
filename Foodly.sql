@@ -248,3 +248,7 @@ WHERE nom like "%Concombre%"; -- Affiche le nombre d'aliments dont le nom contie
 SELECT COUNT(graisses) 
 FROM aliment 
 WHERE nom like "%Concombre%";
+
+SELECT COUNT(DISTINCT nom) 
+FROM aliment 
+WHERE nom LIKE "%pomme%";

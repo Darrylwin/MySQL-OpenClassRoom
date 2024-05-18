@@ -175,3 +175,10 @@ DROP TABLE utilisateur;
 // Suppression de BD:
 
 DROP DATABASE foodly;
+
+
+UPDATE `aliment`
+SET nom = "Pomme Golden Bowns" where id = 2;
+
+DELETE FROM `aliment` 
+WHERE id = 2;

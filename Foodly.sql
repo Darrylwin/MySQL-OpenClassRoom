@@ -221,4 +221,30 @@ WHERE bio = false
 ORDER BY proteines DESC,sucre DESC;
 
 
+// Combien d objets répondent à un critère ?
 
+SELECT COUNT(*) 
+FROM utilisateur 
+WHERE email LIKE "%gmail.com"; --  nombre d’utilisateurs avec une adresse Gmail
+
+SELECT COUNT(*)
+FROM aliment;
+
+SELECT COUNT(email) AS tatal_users_gmail
+FROM utilisateur 
+WHERE email LIKE "%gmail.com";
+
+INSERT INTO aliment(nom, marque,calories)
+VALUES('Concombre',"MarketPrix",18);
+
+SELECT * 
+FROM aliment 
+WHERE nom like "%Concombre%";
+
+SELECT COUNT(nom) 
+FROM aliment 
+WHERE nom like "%Concombre%"; -- Affiche le nombre d'aliments dont le nom contient Concombre
+
+SELECT COUNT(graisses) 
+FROM aliment 
+WHERE nom like "%Concombre%";

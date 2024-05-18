@@ -252,3 +252,30 @@ WHERE nom like "%Concombre%";
 SELECT COUNT(DISTINCT nom) 
 FROM aliment 
 WHERE nom LIKE "%pomme%";
+
+// les alias
+
+SELECT COUNT(DISTINCT nom)  AS "produits différents contenant le mot Concombre"
+FROM aliment 
+WHERE nom LIKE "%Concombre%";
+
+// Opérations sur données chiffrées
+
+-- AVG : nous donne la moyenne de la colonne sur la sélection ;
+
+-- SUM : nous donne la somme de la colonne sur la sélection ;
+
+-- MAX : nous donne le maximum de la colonne sur la sélection ;
+
+-- MIN : nous donne le minimum de la colonne sur la sélection.
+
+
+SELECT MAX(sucre) `maximum de teneur` FROM aliment; -- le maximum de teneur en sucre des aliments dans notre base
+
+SELECT AVG(calories) AS 'Teneur en moyenne de calories > 30kcal' FROM aliment WHERE calories > 30;  -- teneur moyenne en calories des aliments de 30 kcal ou plus 
+
+SELECT ROUND(AVG(calories)) AS "calories moyennes des aliments > 30g"
+FROM aliment 
+WHERE calories > 30;
+
+

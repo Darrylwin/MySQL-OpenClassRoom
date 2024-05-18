@@ -182,3 +182,35 @@ SET nom = "Pomme Golden Bowns" where id = 2;
 
 DELETE FROM `aliment` 
 WHERE id = 2;
+
+-- N.B: On supprime les objets d’une table avec la commande DELETE
+--      On peut supprimer une table ou une base de donnée avec la commande  DROP TABLE  ou  DROP DATABASE
+
+INSERT INTO utilisateur(nom, prenom, email)
+VALUES(
+    "LOGOSSOU",
+    "Darryl-win",
+    'logossoudarryl1@yahoo.com'
+);
+
+
+// Extraction d`informations` dans la BD
+
+SELECT * FROM aliment;
+SELECT * FROM aliment WHERE id = 2;
+SELECT * FROM aliment WHERE calories < 90;
+
+-- Comparaison sur du Texte:
+SELECT nom, id from utilisateur where email LIKE '%yahoo%';
+SELECT * FROM utilisateur WHERE email LIKE "%gmail.com";
+
+-- Affichage par ordre:
+SELECT * FROM aliment ORDER BY calories ASC;
+SELECT * FROM aliment WHERE calories < 90 ORDER BY calories DESC;
+
+SELECT nom,prenom,id FROM utilisateur ORDER BY id DESC;
+
+SELECT nom, marque, id 
+FROM aliment 
+WHERE (calories < 90)  AND (sucre >0.5)
+ORDER BY calories DESC;

@@ -104,3 +104,44 @@ UPDATE `aliment` SET nom = "Pomme Golden", marque = "Intermarché" WHERE id = 2;
 DELETE FROM `utilisateur` WHERE `id` = 4;
 DELETE FROM `utilisateur` WHERE `id` = 2; -- supprimer les users dont le id = 2 et id = 4
 
+INSERT INTO utilisateur
+VALUES(
+    2,
+    "SANOUSSI",
+    "Bilal",
+    "bil_sanoussi@gmail.com"
+),
+(
+    4,
+    "TENEGA",
+    'Françoise',
+    'franci_tenega@gmail.com'
+);
+
+
+INSERT INTO utilisateur(nom,prenom,email)
+VALUES(
+    "SANNI",
+    "Cécile",
+    "yawavisanni@gmail.com"
+),
+(
+    "PANASSA",
+    "Lotinho",
+    'emmanuel_lotie@gmail.com'
+),
+(
+    "AMEYIKPO",
+    "Loreine",
+    "loreineAmeyikpo@gmail.com"
+),
+(
+    "ETOH",
+    "Mawunyo",
+    "mawunyo_etoh@yahoo.com"
+),
+(
+    "ETSE",
+    'Géoffroy',
+    'bouboumegeo@gmail.com'
+);

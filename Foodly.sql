@@ -278,4 +278,5 @@ SELECT ROUND(AVG(calories)) AS "calories moyennes des aliments > 30g"
 FROM aliment 
 WHERE calories > 30;
 
-
+SELECT MIN(id) FROM utilisateur;
+SELECT MAX(graisses) FROM aliment;

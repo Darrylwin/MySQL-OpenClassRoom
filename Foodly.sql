@@ -80,3 +80,9 @@ VALUES(
     1.7,
     FALSE
 );
+
+// Lecture de Données dans la BD
+
+SELECT * FROM utilisateur;  -- Affiche tous les users
+
+SELECT `nom`, `prenom`, `email` FROM utilisateur;  -- lister tous les noms et les calories associées pour chaque aliment 

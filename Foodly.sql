@@ -425,3 +425,14 @@ SET @saved_cs_client     = @@character_set_client;
  1 AS `langue_id`*/;
 SET character_set_client = @saved_cs_client;
 
+
+        --         ===================================================================================
+
+
+SELECT * 
+FROM utilisateur
+JOIN langue
+ON utilisateur.langue_id = langue.id;
+-- ON sert à préciser sur quel attribut se fait la corresondance avec l'autre table
+
+

@@ -428,11 +428,14 @@ SET character_set_client = @saved_cs_client;
 
         --         ===================================================================================
 
-
+                -- Relation 1 à plusieurs
 SELECT * 
 FROM utilisateur
 JOIN langue
 ON utilisateur.langue_id = langue.id;
 -- ON sert à préciser sur quel attribut se fait la corresondance avec l'autre table
 
+SELECT UPPER(U.nom) `Nom d'utilisateur`, L.id `ID User`, UPPER(L.nom) `Langue` FROM utilisateur U JOIN langue L ON U.langue_id = L.id WHERE U.langue_id = 1 ORDER BY U.nom;
+
+                -- Reelation plusieurs à plusieurs
 

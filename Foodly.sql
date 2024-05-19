@@ -437,5 +437,16 @@ ON utilisateur.langue_id = langue.id;
 
 SELECT UPPER(U.nom) `Nom d'utilisateur`, L.id `ID User`, UPPER(L.nom) `Langue` FROM utilisateur U JOIN langue L ON U.langue_id = L.id WHERE U.langue_id = 1 ORDER BY U.nom;
 
-                -- Reelation plusieurs à plusieurs
+                -- Relation plusieurs à plusieurs
 
+SELECT *
+FROM utilisateur
+JOIN utilisateur_aliment ON (utilisateur.id = utilisateur_aliment.utilisateur_id)
+JOIN aliment ON (aliment.id = utilisateur_aliment.aliment_id)  /*WHERE aliment.id = 3*/;
+
+--exo: vous souhaitiez voir tous les aliments sélectionnés par les utilisateurs dont l’adresse e-mail et une adresse Gmail
+
+SELECT aliment.nom, utilisateur.nom, utilisateur.email 
+FROM utilisateur JOIN utilisateur_aliment ON (utilisateur.id = utilisateur_aliment.utilisateur_id) 
+JOIN aliment ON (utilisateur_aliment.aliment_id = aliment.id)
+WHERE utilisateur.email LIKE '%gmail.com%';

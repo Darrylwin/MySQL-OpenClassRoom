@@ -164,11 +164,11 @@ WHERE id = 9;
 
                 /* Suppression de `tables`: */
 
-DROP TABLE utilisateur;
+--DROP TABLE utilisateur;
 
                 /* Suppression de BD:  */
 
-DROP DATABASE foodly;
+--DROP DATABASE foodly;
 
 
 UPDATE `aliment`
@@ -450,3 +450,51 @@ SELECT aliment.nom, utilisateur.nom, utilisateur.email
 FROM utilisateur JOIN utilisateur_aliment ON (utilisateur.id = utilisateur_aliment.utilisateur_id) 
 JOIN aliment ON (utilisateur_aliment.aliment_id = aliment.id)
 WHERE utilisateur.email LIKE '%gmail.com%';
+
+
+-- N.B:
+
+-- Pour effectuer une jointure entre deux tables, on utilise les mots clés  JOIN  et  ON  .
+
+-- On peut utiliser l'opérateur *  ou on peut spécifier les colonnes que nous souhaitons sélectionner.
+
+-- La requête fonctionne comme une requête normale. On peut rajouter des conditions avec WHERE , trier avec  ORDER BY  ou créer des alias avec  AS  .
+
+-- Pour une relation one-to-many, la jointure se fait naturellement en spécifiant les deux colonnes à faire correspondre.
+
+-- Pour les relations many-to-many, il faut passer par une table d'association qui lie les deux tables entre elles.
+
+-- Pour faire une requête many-to-many, on fait donc une double jointure de notre table initiale à notre table de liaison, puis de notre table de liaison à notre table cible.
+
+
+
+                /* Modifier la structure d'une table */
+
+                
+-- Ajouter une colonne dans une table
+ALTER TABLE aliment ADD vitamines_c FLOAT;
+
+
+-- N.B:  Ici, on signale à MySQL :
+
+-- De modifier la structure d’une table avec ALTER TABLE;
+
+-- Quelle table modifier (ici “aliment”) ;
+
+-- Que la modification va faire ajouter une colonne avec ADD;
+
+-- Le nom de cette nouvelle colonne (ici “vitamines_c”) ;
+
+-- Enfin, le type de la colonne (ici,FLOAT).
+
+
+ALTER TABLE `langue` 
+ADD code_ISO VARCHAR(10) UNIQUE;
+
+SELECT * FROM langue;
+
+UPDATE `langue` SET code_ISO = 'fr-fr' WHERE id = 1 ;
+UPDATE `langue` SET code_ISO = 'ang-ang' WHERE id = 2;
+
+-- Supprimer une colonne dans une table
+ALTER TABLE aliment DROP bio;

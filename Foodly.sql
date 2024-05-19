@@ -32,17 +32,13 @@ VALUES (
     'Durantay', 
     'Quentin', 
     'quentin@gmail.com'
-);
-
-INSERT INTO utilisateur(nom,prenom,email)
-VALUES(
+),
+(
     "LOGOSSOU",
     "Darryl-win",
     "logossoudarryl1@yahoo.com"
-);
-
-INSERT INTO utilisateur(nom,prenom,email)
-VALUES(
+),
+(
     "LABOU",
     "Marc",
     "labou_marc@gmail.com"
@@ -52,16 +48,14 @@ VALUES(
     "AMEBLE",
     "Ike",
     "Ike_amb@gmail.com"
-);
+),
 
-INSERT INTO `utilisateur` (`nom`, `prenom`, `email`)
-VALUES
 ('Doe', 'John', 'john@yahoo.fr'),
 ('Smith', 'Jane', 'jane@hotmail.com'),
 ('Dupont', 'Sebastien', 'sebastien@orange.fr'),
 ('Martin', 'Emilie', 'emilie@gmail.com');
 
-// Insertion de donnnées dans la `table` aliment:
+                /* Insertion de donnnées dans la `table` aliment: */
 
 INSERT INTO `aliment` (`nom`, `marque`, `sucre`, `calories`, `graisses`, `proteines`, `bio`)
 VALUES
@@ -81,14 +75,14 @@ VALUES(
     FALSE
 );
 
-// Lecture de Données dans la BD
+                /* Lecture de Données dans la BD */
 
 SELECT * FROM utilisateur;  -- Affiche tous les users
 
 SELECT `nom`, `prenom`, `email` FROM utilisateur;  -- lister tous les noms et les calories associées pour chaque aliment 
 
 
-// Mise à jour de Données
+                /* Mise à jour de Données */
 
 UPDATE `utilisateur` SET `email` = 'quentind@gmail.com' WHERE `id` = '1'; -- changer l’e-mail du premier utilisateur 
 
@@ -99,7 +93,7 @@ UPDATE utilisateur SET `email` = "logossou05@gmail.com" where id = 2;
 UPDATE `aliment` SET nom = "Pomme Golden", marque = "Intermarché" WHERE id = 2;
 
 
-// Suppression de données dans une `table`
+                /* Suppression de données dans une `table` */
 
 DELETE FROM `utilisateur` WHERE `id` = 4;
 DELETE FROM `utilisateur` WHERE `id` = 2; -- supprimer les users dont le id = 2 et id = 4
@@ -168,11 +162,11 @@ SET prenom = "Maxime"
 WHERE id = 9;
 
 
-// Suppression de `tables`:
+                /* Suppression de `tables`: */
 
 DROP TABLE utilisateur;
 
-// Suppression de BD:
+                /* Suppression de BD:  */
 
 DROP DATABASE foodly;
 
@@ -194,7 +188,7 @@ VALUES(
 );
 
 
-// Extraction d`informations` dans la BD
+                /*  Extraction d`informations` dans la BD  */
 
 SELECT * FROM aliment;
 SELECT * FROM aliment WHERE id = 2;
@@ -221,9 +215,9 @@ WHERE bio = false
 ORDER BY proteines DESC,sucre DESC;
 
 
-// Combien d objets répondent à un critère ?
+                /* Combien d objets répondent à un critère ?  */
 
-SELECT COUNT(*) 
+SELECT COUNT(*)
 FROM utilisateur 
 WHERE email LIKE "%gmail.com"; --  nombre d’utilisateurs avec une adresse Gmail
 
@@ -253,13 +247,14 @@ SELECT COUNT(DISTINCT nom)
 FROM aliment 
 WHERE nom LIKE "%pomme%";
 
-// les alias
+                /*  les alias  */
 
 SELECT COUNT(DISTINCT nom)  AS "produits différents contenant le mot Concombre"
 FROM aliment 
 WHERE nom LIKE "%Concombre%";
 
-// Opérations sur données chiffrées
+                /* Opérations sur données chiffrées */
+
 
 -- AVG : nous donne la moyenne de la colonne sur la sélection ;
 

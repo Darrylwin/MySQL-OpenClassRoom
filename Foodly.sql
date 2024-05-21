@@ -1,3 +1,5 @@
+DROP DATABASE IF EXISTS foodly;
+
 CREATE DATABASE foodly; -- Créer une base de donner
 
 SHOW DATABASES; -- Afficher les BD présentes
@@ -27,10 +29,10 @@ SHOW COLUMNS FROM aliment;
 SHOW COLUMNS FROM utilisateur; -- Afficher le Schéma de la table
 
 -- Insertion de données dans la table utilisateurs
-INSERT INTO `utilisateur` (`nom`, `prenom`, `email`) 
+INSERT INTO `utilisateur` (`nom`, `prenom`, `email`)
 VALUES (
-    'Durantay', 
-    'Quentin', 
+    'Durantay',
+    'Quentin',
     'quentin@gmail.com'
 ),
 (
@@ -79,12 +81,12 @@ VALUES(
 
 SELECT * FROM utilisateur;  -- Affiche tous les users
 
-SELECT `nom`, `prenom`, `email` FROM utilisateur;  -- lister tous les noms et les calories associées pour chaque aliment 
+SELECT `nom`, `prenom`, `email` FROM utilisateur;  -- lister tous les noms et les calories associées pour chaque aliment
 
 
                 /* Mise à jour de Données */
 
-UPDATE `utilisateur` SET `email` = 'quentind@gmail.com' WHERE `id` = '1'; -- changer l’e-mail du premier utilisateur 
+UPDATE `utilisateur` SET `email` = 'quentind@gmail.com' WHERE `id` = '1'; -- changer l’e-mail du premier utilisateur
 
 UPDATE aliment SET `nom` =  "Concombre" where `nom` = "poire"; -- Remplacer le nom Poire du champ nom d ealiment par 'Concombre'
 -- UPDATE nom_table SET colonne = valeure
@@ -174,7 +176,7 @@ WHERE id = 9;
 UPDATE `aliment`
 SET nom = "Pomme Golden Bowns" where id = 2;
 
-DELETE FROM `aliment` 
+DELETE FROM `aliment`
 WHERE id = 2;
 
 -- N.B: On supprime les objets d’une table avec la commande DELETE
@@ -204,13 +206,13 @@ SELECT * FROM aliment WHERE calories < 90 ORDER BY calories DESC;
 
 SELECT nom,prenom,id FROM utilisateur ORDER BY id DESC;
 
-SELECT nom, marque, id 
-FROM aliment 
+SELECT nom, marque, id
+FROM aliment
 WHERE (calories < 90)  AND (sucre >0.5)
 ORDER BY calories DESC;
 
 select *
-FROM aliment 
+FROM aliment
 WHERE bio = false
 ORDER BY proteines DESC,sucre DESC;
 
@@ -218,39 +220,39 @@ ORDER BY proteines DESC,sucre DESC;
                 /* Combien d objets répondent à un critère ?  */
 
 SELECT COUNT(*)
-FROM utilisateur 
+FROM utilisateur
 WHERE email LIKE "%gmail.com"; --  nombre d’utilisateurs avec une adresse Gmail
 
 SELECT COUNT(*)
 FROM aliment;
 
 SELECT COUNT(email) AS tatal_users_gmail
-FROM utilisateur 
+FROM utilisateur
 WHERE email LIKE "%gmail.com";
 
 INSERT INTO aliment(nom, marque,calories)
 VALUES('Concombre',"MarketPrix",18);
 
-SELECT * 
-FROM aliment 
+SELECT *
+FROM aliment
 WHERE nom like "%Concombre%";
 
-SELECT COUNT(nom) 
-FROM aliment 
+SELECT COUNT(nom)
+FROM aliment
 WHERE nom like "%Concombre%"; -- Affiche le nombre d'aliments dont le nom contient Concombre
 
-SELECT COUNT(graisses) 
-FROM aliment 
+SELECT COUNT(graisses)
+FROM aliment
 WHERE nom like "%Concombre%";
 
-SELECT COUNT(DISTINCT nom) 
-FROM aliment 
+SELECT COUNT(DISTINCT nom)
+FROM aliment
 WHERE nom LIKE "%pomme%";
 
                 /*  les alias  */
 
 SELECT COUNT(DISTINCT nom)  AS "produits différents contenant le mot Concombre"
-FROM aliment 
+FROM aliment
 WHERE nom LIKE "%Concombre%";
 
                 /* Opérations sur données chiffrées */
@@ -267,10 +269,10 @@ WHERE nom LIKE "%Concombre%";
 
 SELECT MAX(sucre) `maximum de teneur` FROM aliment; -- le maximum de teneur en sucre des aliments dans notre base
 
-SELECT AVG(calories) AS 'Teneur en moyenne de calories > 30kcal' FROM aliment WHERE calories > 30;  -- teneur moyenne en calories des aliments de 30 kcal ou plus 
+SELECT AVG(calories) AS 'Teneur en moyenne de calories > 30kcal' FROM aliment WHERE calories > 30;  -- teneur moyenne en calories des aliments de 30 kcal ou plus
 
 SELECT ROUND(AVG(calories)) AS "calories moyennes des aliments > 30g"
-FROM aliment 
+FROM aliment
 WHERE calories > 30;
 
 SELECT MIN(id) FROM utilisateur;
@@ -300,8 +302,8 @@ CREATE TABLE `aliment` (
 
 LOCK TABLES `aliment` WRITE;
 /*!40000 ALTER TABLE `aliment` DISABLE KEYS */;
-INSERT INTO `aliment` 
-VALUES 
+INSERT INTO `aliment`
+VALUES
 (1,'pomme','sans marque',19.1,72,0.2,0.4,0),
 (2,'poire','sans marque',27.5,134,0.2,1.1,1),
 (3,'banane','chiquita',24,101,0.3,1.1,0),
@@ -342,7 +344,7 @@ CREATE TABLE `langue` (
 
 LOCK TABLES `langue` WRITE;
 /*!40000 ALTER TABLE `langue` DISABLE KEYS */;
-INSERT INTO `langue` 
+INSERT INTO `langue`
 VALUES (1,'français'),
        (2,'anglais' );
 /*!40000 ALTER TABLE `langue` ENABLE KEYS */;
@@ -399,7 +401,7 @@ CREATE TABLE `utilisateur_aliment` (
 LOCK TABLES `utilisateur_aliment` WRITE;
 /*!40000 ALTER TABLE `utilisateur_aliment` DISABLE KEYS */;
 INSERT INTO `utilisateur_aliment`
-VALUES 
+VALUES
 (1,7),(1,3),(1,5),(2,2),(2,19),
 (2,14),(3,4),(3,15),(3,12),(1,17),
 (4,5),(4,4),(4,7),(5,1),(5,18),
@@ -417,7 +419,7 @@ DROP TABLE IF EXISTS `utilisateurs_gmail_vw`;
 /*!50001 DROP VIEW IF EXISTS `utilisateurs_gmail_vw`*/;
 SET @saved_cs_client     = @@character_set_client;
 /*!50503 SET character_set_client = utf8mb4 */;
-/*!50001 CREATE VIEW `utilisateurs_gmail_vw` AS SELECT 
+/*!50001 CREATE VIEW `utilisateurs_gmail_vw` AS SELECT
  1 AS `id`,
  1 AS `nom`,
  1 AS `prenom`,
@@ -429,7 +431,7 @@ SET character_set_client = @saved_cs_client;
         --         ===================================================================================
 
                 -- Relation 1 à plusieurs
-SELECT * 
+SELECT *
 FROM utilisateur
 JOIN langue
 ON utilisateur.langue_id = langue.id;
@@ -446,8 +448,8 @@ JOIN aliment ON (aliment.id = utilisateur_aliment.aliment_id)  /*WHERE aliment.i
 
 --exo: vous souhaitiez voir tous les aliments sélectionnés par les utilisateurs dont l’adresse e-mail et une adresse Gmail
 
-SELECT aliment.nom, utilisateur.nom, utilisateur.email 
-FROM utilisateur JOIN utilisateur_aliment ON (utilisateur.id = utilisateur_aliment.utilisateur_id) 
+SELECT aliment.nom, utilisateur.nom, utilisateur.email
+FROM utilisateur JOIN utilisateur_aliment ON (utilisateur.id = utilisateur_aliment.utilisateur_id)
 JOIN aliment ON (utilisateur_aliment.aliment_id = aliment.id)
 WHERE utilisateur.email LIKE '%gmail.com%';
 
@@ -470,9 +472,9 @@ WHERE utilisateur.email LIKE '%gmail.com%';
 
                 /* Modifier la structure d'une table */
 
-                
+
 -- Ajouter une colonne dans une table
-ALTER TABLE aliment ADD vitamines_c FLOAT;
+ALTER TABLE aliment ADD `vitamines_c` FLOAT;
 
 
 -- N.B:  Ici, on signale à MySQL :
@@ -488,7 +490,7 @@ ALTER TABLE aliment ADD vitamines_c FLOAT;
 -- Enfin, le type de la colonne (ici,FLOAT).
 
 
-ALTER TABLE `langue` 
+ALTER TABLE `langue`
 ADD code_ISO VARCHAR(10) UNIQUE;
 
 SELECT * FROM langue;
@@ -498,3 +500,38 @@ UPDATE `langue` SET code_ISO = 'ang-ang' WHERE id = 2;
 
 -- Supprimer une colonne dans une table
 ALTER TABLE aliment DROP bio;
+
+ALTER TABLE  utilisateur
+DROP nom;
+
+--Modifier un champ d'une table:
+ALTER TABLE `aliment` MODIFY calories FLOAT NOT NULL DEFAULT 10.3;
+
+ALTER TABLE `utilisateur` MODIFY email VARCHAR(500) NOT NULL UNIQUE;
+
+-- Renommer un champ:
+ALTER TABLE aliment CHANGE sucre sucres FLOAT;
+-- N.B: On lui indique que la modification va modifier le nom d’une colonne avec CHANGE;
+
+-- On mentionne le nom de la colonne à renommer, ainsi que son nouveau nom (ici, “sucre” devient “sucres”) ;
+
+-- On indique le nouveau type de la colonne (ici,FLOAT).
+
+
+            --  ================================================================= --
+
+-- Compléments:
+
+ALTER TABLE aliment
+ADD FOREIGN KEY (famille_id) REFERENCES famille (id)
+ON DELETE CASCADE;
+
+
+CREATE TABLE aliment_lieu (
+aliment_id INT NOT NULL,
+lieu_id INT NOT NULL,
+FOREIGN KEY (aliment_id) REFERENCES aliment (id) ON DELETE RESTRICT ON UPDATE CASCADE,
+FOREIGN KEY (lieu_id) REFERENCES lieu (id) ON DELETE RESTRICT ON UPDATE CASCADE,
+PRIMARY KEY (aliment_id, lieu_id)
+);
+

@@ -166,11 +166,11 @@ WHERE id = 9;
 
                 /* Suppression de `tables`: */
 
---DROP TABLE utilisateur;
+-- DROP TABLE utilisateur;
 
                 /* Suppression de BD:  */
 
---DROP DATABASE foodly;
+-- DROP DATABASE foodly;
 
 
 UPDATE `aliment`
@@ -446,7 +446,7 @@ FROM utilisateur
 JOIN utilisateur_aliment ON (utilisateur.id = utilisateur_aliment.utilisateur_id)
 JOIN aliment ON (aliment.id = utilisateur_aliment.aliment_id)  /*WHERE aliment.id = 3*/;
 
---exo: vous souhaitiez voir tous les aliments sélectionnés par les utilisateurs dont l’adresse e-mail et une adresse Gmail
+-- exo: vous souhaitiez voir tous les aliments sélectionnés par les utilisateurs dont l’adresse e-mail et une adresse Gmail
 
 SELECT aliment.nom, utilisateur.nom, utilisateur.email
 FROM utilisateur JOIN utilisateur_aliment ON (utilisateur.id = utilisateur_aliment.utilisateur_id)
@@ -504,7 +504,7 @@ ALTER TABLE aliment DROP bio;
 ALTER TABLE  utilisateur
 DROP nom;
 
---Modifier un champ d'une table:
+-- Modifier un champ d'une table:
 ALTER TABLE `aliment` MODIFY calories FLOAT NOT NULL DEFAULT 10.3;
 
 ALTER TABLE `utilisateur` MODIFY email VARCHAR(500) NOT NULL UNIQUE;
@@ -523,7 +523,7 @@ ALTER TABLE aliment CHANGE sucre sucres FLOAT;
 -- Compléments:
 
 ALTER TABLE aliment
-ADD FOREIGN KEY (famille_id) REFERENCES famille (id)
+ADD FOREIGN KEY (id) REFERENCES famille (id)
 ON DELETE CASCADE;
 
 

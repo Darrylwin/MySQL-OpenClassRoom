@@ -2,5 +2,9 @@
 <project version="4">
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/Foodly.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/GeDSoft.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/société commerciale.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/ventes.sql" dialect="MySQL" />
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/c78345f4-8f99-424c-9205-0b18519dceae/console.sql" dialect="MySQL" />
   </component>
 </project>
